@@ -1,0 +1,62 @@
+---
+title: Weiss Schwarz
+permalink: /weiss-schwarz/
+---
+
+<div itemscope itemtype="http://schema.org/ItemList" class="content" id="products">
+	<section class="pb5 ph2 tc">
+
+		<div class="mb4">
+			<input type="text" id="category-search" class="pa2 br2 ba b--black-20 w-50" placeholder="Search Weiss Schwarz products..." onkeyup="filterProducts()">
+		</div>
+
+		<div class="flex flex-wrap justify-center center" id="product-list">
+			{% for product in site.products %}
+			{% if product.cat == "weiss-schwarz" %}
+			<div itemprop="itemListElement" itemscope itemtype="http://schema.org/Product" class="product-item pa3 tc" style="width: 300px;" data-title="{{ product.title | downcase }}" data-description="{{ product.description_markdown | downcase }}">
+				<div itemprop="image" class="aspect-ratio aspect-ratio--1x1 center" style="max-width: 250px;">
+					<a href="{{ product.url | relative_url }}" style="background-image:url({{ product.image | relative_url }});"
+					class="db bg-center cover aspect-ratio--object"><h4 class="f4 helvetica bg-light-green no-underline white shadow-2 grow pa2 pv3 dib mr3">$ {{ product.price }}</h4>
+					</a>
+				</div>
+				<article itemprop="itemListElement" itemscope itemtype="http://schema.org/Offer" class="product-details lh-copy avenir">
+					<h3><a itemprop="url" class="f5 f4-ns mb0 link black-90 link dim avenir" href="{{ product.url | relative_url }}"><span itemprop="name">{{ product.title }}</span></a></h3>
+					<div itemprop="description" class="product-description f6 f5 fw4 mt1 black-60 pb4">
+						{{ product.description_markdown | truncate: 92 | markdownify }}
+					</div>
+				</article>
+			</div>
+			{% endif %}
+			{% endfor %}
+		</div>
+
+		<p id="no-results" class="dn">No products found matching your search.</p>
+	</section>
+</div>
+
+<script>
+function filterProducts() {
+	var input = document.getElementById('category-search');
+	var filter = input.value.toLowerCase();
+	var products = document.getElementsByClassName('product-item');
+	var noResults = document.getElementById('no-results');
+	var visibleCount = 0;
+
+	for (var i = 0; i < products.length; i++) {
+		var title = products[i].getAttribute('data-title');
+		var description = products[i].getAttribute('data-description');
+		if (title.indexOf(filter) > -1 || description.indexOf(filter) > -1) {
+			products[i].style.display = '';
+			visibleCount++;
+		} else {
+			products[i].style.display = 'none';
+		}
+	}
+
+	if (visibleCount === 0 && filter !== '') {
+		noResults.classList.remove('dn');
+	} else {
+		noResults.classList.add('dn');
+	}
+}
+</script>

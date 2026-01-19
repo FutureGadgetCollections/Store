@@ -1,0 +1,47 @@
+{
+  "name": "supply",
+  "version": "1.1.1",
+  "description": "Supply, an e-commere theme for Gumroad, built with Jekyll",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YJPL/supply/"
+  },
+  "keywords": [
+    "css",
+    "e-commerce",
+    "Jekyll",
+    "Gumroad",
+    "oocss",
+    "supply"
+  ],
+  "author": "YJPL",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/YJPL/supply/issues"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.23",
+    "cssnano": "^7.1.2",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "postcss-import": "^16.1.1",
+    "postcss-nested": "^7.0.2",
+    "postcss-preset-env": "^10.6.1",
+    "uglify-js": "^3.19.3"
+  },
+  "contributors": [
+    {
+      "name": "YJPL",
+      "email": ""
+    }
+  ],
+  "scripts": {
+    "start": "npm run build && npm run serve:jekyll",
+    "serve:jekyll": "JEKYLL_ENV=development bundle exec jekyll serve --livereload --open-url http://localhost:4000/",
+    "minify-js": "uglifyjs assets/js/*.js -o assets/js/script.min.js",
+    "build": "npm run build:css && npm run minify:css",
+    "build:css": "postcss src/sup-tachyons.css > assets/css/sup-tachyons.css",
+    "minify:css": "postcss assets/css/sup-tachyons.css > assets/css/sup-tachyons.min.css  --use cssnano"
+  }
+}

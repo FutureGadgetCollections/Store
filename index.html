@@ -1,0 +1,34 @@
+---
+title: Future Gadget Collections
+hero: The Collections of Future Gadget Labs
+---
+
+<div itemscope itemtype="http://schema.org/ItemList" class="content" id="products">
+	<section class="cf pb5 ph6-ns ph2">
+		<div class="container flex-wrap flex justify-center">
+
+				{% for product in site.products reversed %}
+
+				<div itemprop="itemListElement" itemscope itemtype="http://schema.org/Product" class="product-list w-50 w-third-m ph2-m w-25-l ph2 tc">
+
+						<div itemprop="image" class="center" style="max-width: 150px; height: 150px; overflow: hidden;">
+							<a href="{{ product.url | relative_url }}" style="background-image:url({{ product.image | relative_url }}); height: 150px;"
+						class="db bg-center cover" /><h4 class="f6 helvetica bg-light-green no-underline white shadow-2 grow pa1 pv1 dib">$ {{ product.price }}</h4>
+							</a>
+						</div>
+
+						<article itemprop="itemListElement" itemscope itemtype="http://schema.org/Offer" class="product-details lh-copy avenir">
+							<h3 class="mb1 mt2"><a itemprop="url" class="f7 mb0 link black-90 link dim avenir" href="{{ product.url | relative_url }}"><span itemprop="name">{{ product.title }}</span></a></h3>
+							<div itemprop="description" class="product-description f7 fw4 black-60 pb2">
+								{{ product.description_markdown | truncate: 40 | markdownify }}
+							</div>
+						</article>
+
+				</div>
+				{% endfor %}
+
+		</div>
+
+		<div class="pa3">{% include site-search.html %}</div>
+	</section>
+</div>

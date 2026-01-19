@@ -1,0 +1,31 @@
+- name: Pokemon
+  slug: pokemon
+  description: Pokemon cards, figures, and collectibles
+
+- name: Bobbleheads
+  slug: bobbleheads
+  description: Bobblehead figures and collectibles
+
+- name: Legos
+  slug: legos
+  description: Lego sets and builds
+
+- name: Funko Pops
+  slug: funko-pops
+  description: Funko Pop vinyl figures
+
+- name: Magic The Gathering
+  slug: mtg
+  description: Magic The Gathering cards and accessories
+
+- name: Weiss Schwarz
+  slug: weiss-schwarz
+  description: Weiss Schwarz trading cards
+
+- name: Signed Memorabilia
+  slug: signed-memorabilia
+  description: Autographed and signed collectibles
+
+- name: Other
+  slug: other
+  description: Other collectibles and merchandise

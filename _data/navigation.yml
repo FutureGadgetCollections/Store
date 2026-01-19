@@ -1,0 +1,32 @@
+- name: Pokemon
+  link: /pokemon/
+  new_window: false
+  highlight: false
+- name: Bobbleheads
+  link: /bobbleheads/
+  new_window: false
+  highlight: false
+- name: Legos
+  link: /legos/
+  new_window: false
+  highlight: false
+- name: Funko Pops
+  link: /funko-pops/
+  new_window: false
+  highlight: false
+- name: MTG
+  link: /mtg/
+  new_window: false
+  highlight: false
+- name: Weiss Schwarz
+  link: /weiss-schwarz/
+  new_window: false
+  highlight: false
+- name: Signed
+  link: /signed-memorabilia/
+  new_window: false
+  highlight: false
+- name: Other
+  link: /other/
+  new_window: false
+  highlight: false

@@ -1,0 +1,154 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
+
+backend:
+  name: github
+  repo: FutureGadgetCollections/Store
+  base_url: https://sveltia-cms-auth.futuregadgetlabs.com
+
+media_folder: images/products
+public_folder: /images/products
+
+collections:
+  - name: pokemon
+    label: "Pokemon"
+    folder: _products/pokemon
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "product" }
+      - { label: "Category", name: "cat", widget: "hidden", default: "pokemon" }
+      - { label: "Software", name: "software", widget: "string", default: "Pokemon" }
+      - { label: "Description", name: "description_markdown", widget: "text" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Gumroad ID", name: "id", widget: "string" }
+      - { label: "Price", name: "price", widget: "string" }
+      - { label: "Button Text", name: "text-button", widget: "string", default: "Buy Now" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: bobbleheads
+    label: "Bobbleheads"
+    folder: _products/bobbleheads
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "product" }
+      - { label: "Category", name: "cat", widget: "hidden", default: "bobbleheads" }
+      - { label: "Software", name: "software", widget: "string", default: "Bobbleheads" }
+      - { label: "Description", name: "description_markdown", widget: "text" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Gumroad ID", name: "id", widget: "string" }
+      - { label: "Price", name: "price", widget: "string" }
+      - { label: "Button Text", name: "text-button", widget: "string", default: "Buy Now" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: legos
+    label: "Legos"
+    folder: _products/legos
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "product" }
+      - { label: "Category", name: "cat", widget: "hidden", default: "legos" }
+      - { label: "Software", name: "software", widget: "string", default: "Legos" }
+      - { label: "Description", name: "description_markdown", widget: "text" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Gumroad ID", name: "id", widget: "string" }
+      - { label: "Price", name: "price", widget: "string" }
+      - { label: "Button Text", name: "text-button", widget: "string", default: "Buy Now" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: funko
+    label: "Funko Pops"
+    folder: _products/funko
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "product" }
+      - { label: "Category", name: "cat", widget: "hidden", default: "funko-pops" }
+      - { label: "Software", name: "software", widget: "string", default: "Funko Pops" }
+      - { label: "Description", name: "description_markdown", widget: "text" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Gumroad ID", name: "id", widget: "string" }
+      - { label: "Price", name: "price", widget: "string" }
+      - { label: "Button Text", name: "text-button", widget: "string", default: "Buy Now" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: mtg
+    label: "Magic The Gathering"
+    folder: _products/mtg
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "product" }
+      - { label: "Category", name: "cat", widget: "hidden", default: "mtg" }
+      - { label: "Software", name: "software", widget: "string", default: "Magic The Gathering" }
+      - { label: "Description", name: "description_markdown", widget: "text" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Gumroad ID", name: "id", widget: "string" }
+      - { label: "Price", name: "price", widget: "string" }
+      - { label: "Button Text", name: "text-button", widget: "string", default: "Buy Now" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: weiss-schwarz
+    label: "Weiss Schwarz"
+    folder: _products/weiss-schwarz
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "product" }
+      - { label: "Category", name: "cat", widget: "hidden", default: "weiss-schwarz" }
+      - { label: "Software", name: "software", widget: "string", default: "Weiss Schwarz" }
+      - { label: "Description", name: "description_markdown", widget: "text" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Gumroad ID", name: "id", widget: "string" }
+      - { label: "Price", name: "price", widget: "string" }
+      - { label: "Button Text", name: "text-button", widget: "string", default: "Buy Now" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: signed-memorabilia
+    label: "Signed Memorabilia"
+    folder: _products/signed-memorabilia
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "product" }
+      - { label: "Category", name: "cat", widget: "hidden", default: "signed-memorabilia" }
+      - { label: "Software", name: "software", widget: "string", default: "Signed Memorabilia" }
+      - { label: "Description", name: "description_markdown", widget: "text" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Gumroad ID", name: "id", widget: "string" }
+      - { label: "Price", name: "price", widget: "string" }
+      - { label: "Button Text", name: "text-button", widget: "string", default: "Buy Now" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: other
+    label: "Other"
+    folder: _products/other
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "product" }
+      - { label: "Category", name: "cat", widget: "hidden", default: "other" }
+      - { label: "Software", name: "software", widget: "string", default: "Other" }
+      - { label: "Description", name: "description_markdown", widget: "text" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Gumroad ID", name: "id", widget: "string" }
+      - { label: "Price", name: "price", widget: "string" }
+      - { label: "Button Text", name: "text-button", widget: "string", default: "Buy Now" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }

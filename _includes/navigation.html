@@ -1,0 +1,10 @@
+<nav role="navigation" class="w-100 border-box pa3 ph6-l tc mb2 mb0-l">
+	<div class="mb3">
+		<a class="mid-gray link grow f5 f4-l b ttu tracked helvetica" href="{{ '/' | relative_url }}" title="Future Gadget Collections">FUTURE GADGET COLLECTIONS</a>
+	</div>
+	<div class="flex flex-wrap justify-center">
+		{% for link in site.data.navigation %}
+		<a class="mid-gray link dim ph3 pv2 helvetica f6 f5-l {% if link.link == page.url %}b underline{% endif %}" href="{% include relative-src.html src=link.link %}" {% if link.new_window %}target="_blank"{% endif %}>{{ link.name }}</a>
+		{% endfor %}
+	</div>
+</nav>
