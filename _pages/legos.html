@@ -13,19 +13,20 @@ permalink: /legos/
 		<div class="flex flex-wrap justify-center center" id="product-list">
 			{% for product in site.products %}
 			{% if product.cat == "legos" %}
+			{% if product.stripe_mode == nil or product.stripe_mode == site.stripe.mode %}
 			<div itemprop="itemListElement" itemscope itemtype="http://schema.org/Product" class="product-item pa3 tc" style="width: 300px;" data-title="{{ product.title | downcase }}" data-description="{{ product.description_markdown | downcase }}">
-				<div itemprop="image" class="aspect-ratio aspect-ratio--1x1 center" style="max-width: 250px;">
-					<a href="{{ product.url | relative_url }}" style="background-image:url({{ product.image | relative_url }});"
-					class="db bg-center cover aspect-ratio--object"><h4 class="f4 helvetica bg-light-green no-underline white shadow-2 grow pa2 pv3 dib mr3">$ {{ product.price }}</h4>
-					</a>
+				<div itemprop="image" class="center" style="max-width: 250px; height: 250px; position: relative;">
+					<a href="{{ product.url | relative_url }}" style="background-image:url({{ product.image | relative_url }}); height: 250px; display: block;" class="bg-center cover"></a>
+					<span style="position: absolute; top: 8px; right: 8px; z-index: 10;" class="bg-dark-green white pa2 f5 b br2">${{ product.price }}</span>
 				</div>
 				<article itemprop="itemListElement" itemscope itemtype="http://schema.org/Offer" class="product-details lh-copy avenir">
 					<h3><a itemprop="url" class="f5 f4-ns mb0 link black-90 link dim avenir" href="{{ product.url | relative_url }}"><span itemprop="name">{{ product.title }}</span></a></h3>
-					<div itemprop="description" class="product-description f6 f5 fw4 mt1 black-60 pb4">
-						{{ product.description_markdown | truncate: 92 | markdownify }}
-					</div>
+					{% if product.price_id %}
+					<button onclick="StripeCart.addToCart('{{ product.price_id }}', '{{ product.title | escape }}', {{ product.price }}, '{{ product.image }}')" class="mt2 bn bg-dark-green white pa2 br2 pointer f6 b">Add to Cart</button>
+					{% endif %}
 				</article>
 			</div>
+			{% endif %}
 			{% endif %}
 			{% endfor %}
 		</div>

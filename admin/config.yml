@@ -21,7 +21,9 @@ collections:
       - { label: "Software", name: "software", widget: "string", default: "Pokemon" }
       - { label: "Description", name: "description_markdown", widget: "text" }
       - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Gumroad ID", name: "id", widget: "string" }
+      - { label: "Stripe Product ID", name: "id", widget: "string" }
+      - { label: "Stripe Price ID", name: "price_id", widget: "string" }
+      - { label: "Stripe Mode", name: "stripe_mode", widget: "select", options: ["test", "live"] }
       - { label: "Price", name: "price", widget: "string" }
       - { label: "Button Text", name: "text-button", widget: "string", default: "Buy Now" }
       - { label: "Image", name: "image", widget: "image" }
@@ -39,7 +41,9 @@ collections:
       - { label: "Software", name: "software", widget: "string", default: "Bobbleheads" }
       - { label: "Description", name: "description_markdown", widget: "text" }
       - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Gumroad ID", name: "id", widget: "string" }
+      - { label: "Stripe Product ID", name: "id", widget: "string" }
+      - { label: "Stripe Price ID", name: "price_id", widget: "string" }
+      - { label: "Stripe Mode", name: "stripe_mode", widget: "select", options: ["test", "live"] }
       - { label: "Price", name: "price", widget: "string" }
       - { label: "Button Text", name: "text-button", widget: "string", default: "Buy Now" }
       - { label: "Image", name: "image", widget: "image" }
@@ -57,7 +61,9 @@ collections:
       - { label: "Software", name: "software", widget: "string", default: "Legos" }
       - { label: "Description", name: "description_markdown", widget: "text" }
       - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Gumroad ID", name: "id", widget: "string" }
+      - { label: "Stripe Product ID", name: "id", widget: "string" }
+      - { label: "Stripe Price ID", name: "price_id", widget: "string" }
+      - { label: "Stripe Mode", name: "stripe_mode", widget: "select", options: ["test", "live"] }
       - { label: "Price", name: "price", widget: "string" }
       - { label: "Button Text", name: "text-button", widget: "string", default: "Buy Now" }
       - { label: "Image", name: "image", widget: "image" }
@@ -75,7 +81,9 @@ collections:
       - { label: "Software", name: "software", widget: "string", default: "Funko Pops" }
       - { label: "Description", name: "description_markdown", widget: "text" }
       - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Gumroad ID", name: "id", widget: "string" }
+      - { label: "Stripe Product ID", name: "id", widget: "string" }
+      - { label: "Stripe Price ID", name: "price_id", widget: "string" }
+      - { label: "Stripe Mode", name: "stripe_mode", widget: "select", options: ["test", "live"] }
       - { label: "Price", name: "price", widget: "string" }
       - { label: "Button Text", name: "text-button", widget: "string", default: "Buy Now" }
       - { label: "Image", name: "image", widget: "image" }
@@ -93,7 +101,9 @@ collections:
       - { label: "Software", name: "software", widget: "string", default: "Magic The Gathering" }
       - { label: "Description", name: "description_markdown", widget: "text" }
       - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Gumroad ID", name: "id", widget: "string" }
+      - { label: "Stripe Product ID", name: "id", widget: "string" }
+      - { label: "Stripe Price ID", name: "price_id", widget: "string" }
+      - { label: "Stripe Mode", name: "stripe_mode", widget: "select", options: ["test", "live"] }
       - { label: "Price", name: "price", widget: "string" }
       - { label: "Button Text", name: "text-button", widget: "string", default: "Buy Now" }
       - { label: "Image", name: "image", widget: "image" }
@@ -111,7 +121,9 @@ collections:
       - { label: "Software", name: "software", widget: "string", default: "Weiss Schwarz" }
       - { label: "Description", name: "description_markdown", widget: "text" }
       - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Gumroad ID", name: "id", widget: "string" }
+      - { label: "Stripe Product ID", name: "id", widget: "string" }
+      - { label: "Stripe Price ID", name: "price_id", widget: "string" }
+      - { label: "Stripe Mode", name: "stripe_mode", widget: "select", options: ["test", "live"] }
       - { label: "Price", name: "price", widget: "string" }
       - { label: "Button Text", name: "text-button", widget: "string", default: "Buy Now" }
       - { label: "Image", name: "image", widget: "image" }
@@ -129,7 +141,9 @@ collections:
       - { label: "Software", name: "software", widget: "string", default: "Signed Memorabilia" }
       - { label: "Description", name: "description_markdown", widget: "text" }
       - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Gumroad ID", name: "id", widget: "string" }
+      - { label: "Stripe Product ID", name: "id", widget: "string" }
+      - { label: "Stripe Price ID", name: "price_id", widget: "string" }
+      - { label: "Stripe Mode", name: "stripe_mode", widget: "select", options: ["test", "live"] }
       - { label: "Price", name: "price", widget: "string" }
       - { label: "Button Text", name: "text-button", widget: "string", default: "Buy Now" }
       - { label: "Image", name: "image", widget: "image" }
@@ -147,7 +161,9 @@ collections:
       - { label: "Software", name: "software", widget: "string", default: "Other" }
       - { label: "Description", name: "description_markdown", widget: "text" }
       - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Gumroad ID", name: "id", widget: "string" }
+      - { label: "Stripe Product ID", name: "id", widget: "string" }
+      - { label: "Stripe Price ID", name: "price_id", widget: "string" }
+      - { label: "Stripe Mode", name: "stripe_mode", widget: "select", options: ["test", "live"] }
       - { label: "Price", name: "price", widget: "string" }
       - { label: "Button Text", name: "text-button", widget: "string", default: "Buy Now" }
       - { label: "Image", name: "image", widget: "image" }

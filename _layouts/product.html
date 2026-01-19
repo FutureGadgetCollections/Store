@@ -2,31 +2,36 @@
 layout: default
 ---
 <div class="content content pa3 ph6-l">
-	<section class="page measure-wide f5 f4-ns lh-copy avenir">
-			<div itemscope itemtype="http://schema.org/Product" class="product-container {% if page.full_width %}max-container{% endif %}">
+	<section class="page f5 f4-ns lh-copy avenir">
+		<div class="flex flex-column flex-row-ns items-start">
 
-						{{ content }}
+			{% if page.image %}
+			<div class="pr4-ns mb4 mb0-ns" style="width: 200px; flex-shrink: 0;">
+				<img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="w-100 br2 shadow-4">
 			</div>
+			{% endif %}
 
-				{% include product-styles.html product=page %}
-				<div itemscope itemtype="http://schema.org/Offer" class="w-100 w-50ns product-details measure-wide lh-copy f5 f4-ns helvetica black-60" id="add">
-					
-					<h4 itemprop="itemOffered">Software: {{ page.software | join: ' ' }}</h4>
-					
-					{% comment %} Note that you can of course use your own custom front matter variable here, instead of "Software", see https://templates.supply/sorting-jekyll-collections-by-custom-variable/ {% endcomment %}
+			<div class="flex-auto">
+				<div itemscope itemtype="http://schema.org/Product" class="product-container {% if page.full_width %}max-container{% endif %}">
+					{{ content }}
+				</div>
 
-					{% if page.format %}
-					<h5>Format: {{ page.format }}</h5>
+				<div itemscope itemtype="http://schema.org/Offer" class="product-details lh-copy f5 f4-ns helvetica black-60 mt3" id="add">
+					<h4 itemprop="priceCurrency" content="USD" class="f3 mb3">$ <span itemprop="price" content="{{ page.price }}">{{ page.price }}</span></h4>
+
+					{% if page.price_id %}
+						{% if page.stripe_mode == nil or page.stripe_mode == site.stripe.mode %}
+					<div class="mt3">
+						{% include stripe-add-to-cart.html price_id=page.price_id name=page.title price=page.price image=page.image %}
+					</div>
+						{% else %}
+					<div class="mt3 pa3 bg-light-yellow br2">
+						<p class="ma0 f6">This product is not available in the current store mode.</p>
+					</div>
+						{% endif %}
 					{% endif %}
-
-					{% if page.ratio %}
-					<h5>Film Ratio: {{ page.ratio }}</h5>
-					{% endif %}
-
-<span itemprop="description">
-					{{ page.description_markdown | markdownify }}
-</span>
-					<h4 itemprop="priceCurrency" content="USD"></span>$ <span itemprop="price" content="{{ page.price }}">{{ page.price }}</h4>
+				</div>
+			</div>
 
 		</div>
 	</section>

@@ -1,6 +1,7 @@
-<nav role="navigation" class="w-100 border-box pa3 ph6-l tc mb2 mb0-l">
-	<div class="mb3">
+<nav role="navigation" class="w-100 border-box pa3 ph6-l mb2 mb0-l">
+	<div class="flex items-center justify-between mb3">
 		<a class="mid-gray link grow f5 f4-l b ttu tracked helvetica" href="{{ '/' | relative_url }}" title="Future Gadget Collections">FUTURE GADGET COLLECTIONS</a>
+		{% include stripe-cart.html %}
 	</div>
 	<div class="flex flex-wrap justify-center">
 		{% for link in site.data.navigation %}

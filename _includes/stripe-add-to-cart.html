@@ -1,0 +1,14 @@
+<button
+  onclick="StripeCart.addToCart('{{ include.price_id }}', '{{ include.name | escape }}', {{ include.price }}, '{{ include.image }}')"
+  class="add-to-cart-btn bn bg-dark-green white pa2 ph3 br2 pointer f6 b">
+  {{ include.button_text | default: "Add to Cart" }} - ${{ include.price }}
+</button>
+
+<style>
+  .add-to-cart-btn:hover {
+    background-color: #137752;
+  }
+  .add-to-cart-btn:active {
+    transform: scale(0.98);
+  }
+</style>

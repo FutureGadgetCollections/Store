@@ -8,7 +8,7 @@ google_analytics_key:
 # Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
 logo: /siteicon.png
 tagline:
-description: Jekyll template for e-commerce with Gumroad integration
+description: Jekyll template for e-commerce with Stripe integration
 author:
   name: Future Gadget Collectibles
   email:
@@ -74,6 +74,12 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+
+# Stripe settings
+stripe:
+  mode: test  # 'live' or 'test'
+  publishable_key_live: pk_live_51SrO2CLuNRMBM7fJQ8gB5uTyU88mOe9GGD42RavoBoPKCedjluc1tnkUO8f2QH17iv2nUjf24Pv4Jkaophud5Msn00GIJHsgrc
+  publishable_key_test: pk_test_51SrO2KLTedha2xGONS9gH7fveAobQdtlC7a5ulXDOJEKQR5rTjARXicnFPc31EzFDwbF994rbtw4RJtYXZ4tl0j500JOwngouM
 
 # Contact settings
 formcarry: https://formcarry.com/ # add you formcarry endpoint url (see https://formcarry.com/documentation/getting-started)

@@ -8,23 +8,23 @@ hero: The Collections of Future Gadget Labs
 		<div class="container flex-wrap flex justify-center">
 
 				{% for product in site.products reversed %}
-
+				{% if product.stripe_mode == nil or product.stripe_mode == site.stripe.mode %}
 				<div itemprop="itemListElement" itemscope itemtype="http://schema.org/Product" class="product-list w-50 w-third-m ph2-m w-25-l ph2 tc">
 
-						<div itemprop="image" class="center" style="max-width: 150px; height: 150px; overflow: hidden;">
-							<a href="{{ product.url | relative_url }}" style="background-image:url({{ product.image | relative_url }}); height: 150px;"
-						class="db bg-center cover" /><h4 class="f6 helvetica bg-light-green no-underline white shadow-2 grow pa1 pv1 dib">$ {{ product.price }}</h4>
-							</a>
+						<div itemprop="image" class="center" style="max-width: 150px; height: 150px; position: relative;">
+							<a href="{{ product.url | relative_url }}" style="background-image:url({{ product.image | relative_url }}); height: 150px; display: block;" class="bg-center cover"></a>
+							<span style="position: absolute; top: 4px; right: 4px; z-index: 10;" class="bg-dark-green white pa1 f7 b br2">${{ product.price }}</span>
 						</div>
 
 						<article itemprop="itemListElement" itemscope itemtype="http://schema.org/Offer" class="product-details lh-copy avenir">
 							<h3 class="mb1 mt2"><a itemprop="url" class="f7 mb0 link black-90 link dim avenir" href="{{ product.url | relative_url }}"><span itemprop="name">{{ product.title }}</span></a></h3>
-							<div itemprop="description" class="product-description f7 fw4 black-60 pb2">
-								{{ product.description_markdown | truncate: 40 | markdownify }}
-							</div>
+							{% if product.price_id %}
+							<button onclick="StripeCart.addToCart('{{ product.price_id }}', '{{ product.title | escape }}', {{ product.price }}, '{{ product.image }}')" class="mt1 bn bg-dark-green white pa1 br2 pointer f7 b">Add to Cart</button>
+							{% endif %}
 						</article>
 
 				</div>
+				{% endif %}
 				{% endfor %}
 
 		</div>
