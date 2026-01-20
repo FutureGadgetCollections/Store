@@ -20,6 +20,9 @@
   "bugs": {
     "url": "https://github.com/YJPL/supply/issues"
   },
+  "dependencies": {
+    "stripe": "^14.0.0"
+  },
   "devDependencies": {
     "autoprefixer": "^10.4.23",
     "cssnano": "^7.1.2",
