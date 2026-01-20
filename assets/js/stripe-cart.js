@@ -148,8 +148,12 @@
       quantity: item.quantity
     }));
 
+    // Use configured checkout URL or default to relative path
+    const checkoutUrl = (window.StripeConfig && window.StripeConfig.checkoutUrl)
+      || '/.netlify/functions/create-checkout-session';
+
     try {
-      const response = await fetch('/.netlify/functions/create-checkout-session', {
+      const response = await fetch(checkoutUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

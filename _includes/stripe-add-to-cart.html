@@ -1,5 +1,5 @@
 <button
-  onclick="StripeCart.addToCart('{{ include.price_id }}', '{{ include.name | escape }}', {{ include.price }}, '{{ include.image }}')"
+  onclick='StripeCart.addToCart({{ include.price_id | jsonify }}, {{ include.name | jsonify }}, {{ include.price }}, {{ include.image | jsonify }})'
   class="add-to-cart-btn bn bg-dark-green white pa2 ph3 br2 pointer f6 b">
   {{ include.button_text | default: "Add to Cart" }} - ${{ include.price }}
 </button>

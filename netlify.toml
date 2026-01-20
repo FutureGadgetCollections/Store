@@ -1,6 +1,0 @@
-[build]
-  publish = "_site"
-  command = "jekyll build"
-
-[functions]
-  directory = "netlify/functions"

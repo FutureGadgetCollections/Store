@@ -1,6 +1,7 @@
 <script>
   window.StripeConfig = {
     mode: '{{ site.stripe.mode }}',
-    publishableKey: '{% if site.stripe.mode == "live" %}{{ site.stripe.publishable_key_live }}{% else %}{{ site.stripe.publishable_key_test }}{% endif %}'
+    publishableKey: '{% if site.stripe.mode == "live" %}{{ site.stripe.publishable_key_live }}{% else %}{{ site.stripe.publishable_key_test }}{% endif %}',
+    checkoutUrl: '{% if site.stripe.mode == "live" %}{{ site.stripe.checkout_url_live }}{% else %}{{ site.stripe.checkout_url_test }}{% endif %}'
   };
 </script>
