@@ -160,8 +160,8 @@
         },
         body: JSON.stringify({
           lineItems: lineItems,
-          successUrl: window.location.origin + '/checkout-success/',
-          cancelUrl: window.location.origin + '/checkout-cancel/'
+          successUrl: window.location.origin + (window.StripeConfig.baseUrl || '') + '/checkout-success/',
+          cancelUrl: window.location.origin + (window.StripeConfig.baseUrl || '') + '/checkout-cancel/'
         })
       });
 

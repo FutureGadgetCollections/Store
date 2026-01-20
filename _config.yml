@@ -1,7 +1,7 @@
 # This will be the first part of the title tag for your site <title> site.name + page.title </title>
 title: Future Gadget Collectibles
 url: "https://www.futuregadgetlabs.com" # the base hostname & protocol for your site, e.g. http://example.com, also used in jekyll-seo-tag
-#baseurl: /store
+baseurl: /Store
 repo: https://github.com/YJPL/Supply/
 google_analytics_key:
 
