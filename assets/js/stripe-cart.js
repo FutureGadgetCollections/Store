@@ -134,7 +134,7 @@
     }, 2000);
   }
 
-  // Checkout with Stripe
+  // Checkout with Stripe via Netlify Function
   async function checkout() {
     const cart = getCart();
 
@@ -143,30 +143,35 @@
       return;
     }
 
-    if (!stripe) {
-      initStripe();
-    }
-
     const lineItems = cart.map(item => ({
       price: item.priceId,
       quantity: item.quantity
     }));
 
     try {
-      const { error } = await stripe.redirectToCheckout({
-        lineItems: lineItems,
-        mode: 'payment',
-        successUrl: window.location.origin + '/checkout-success/',
-        cancelUrl: window.location.origin + '/checkout-cancel/'
+      const response = await fetch('/.netlify/functions/create-checkout-session', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          lineItems: lineItems,
+          successUrl: window.location.origin + '/checkout-success/',
+          cancelUrl: window.location.origin + '/checkout-cancel/'
+        })
       });
 
-      if (error) {
-        console.error('Stripe checkout error:', error);
-        alert('Checkout failed: ' + error.message);
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Checkout failed');
       }
+
+      // Redirect to Stripe Checkout
+      window.location.href = data.url;
     } catch (err) {
       console.error('Checkout error:', err);
-      alert('Checkout failed. Please try again.');
+      alert('Checkout failed: ' + err.message);
     }
   }
 
